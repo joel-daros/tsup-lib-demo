@@ -1,0 +1,17 @@
+.exampleClass {
+  font-size: 2rem;
+  color: oklch(61% 0.2 29);
+  background-color: #ff0;
+}
+
+:fullscreen {
+  color: #000000;
+}
+
+::placeholder {
+  color: gray;
+}
+
+.Other-thing {
+  color: red;
+}

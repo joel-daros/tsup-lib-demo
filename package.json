@@ -2,15 +2,15 @@
   "name": "tsup-react-package-starter",
   "description": "",
   "version": "0.0.0",
-  "author": "",
-  "license": "",
+  "author": "Analysis Team",
+  "license": "UNLICENSED",
   "keywords": [],
   "repository": {
     "type": "git",
     "url": ""
   },
   "scripts": {
-    "dev": "concurrently \"yarn build --watch\" \"yarn storybook\" \"yarn test:watch\" ",
+    "dev": "yarn build --watch",
     "build": "tsup --onSuccess \"yarn yalc publish\"",
     "type-check": "tsc",
     "lint": "eslint --ignore-path .gitignore \"{src,tests}/**/*.+(ts|js|tsx)\"",
@@ -19,29 +19,7 @@
     "test:ci": "yarn test --ci",
     "test:watch": "jest --watch",
     "prepare": "husky install",
-    "commit": "cz",
-    "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build",
-    "deploy-storybook": "storybook-to-ghpages",
-    "release": "yarn build && yarn release-it"
-  },
-  "tsup": {
-    "entry": [
-      "src/index.ts"
-    ],
-    "treeshake": true,
-    "sourcemap": "inline",
-    "minify": true,
-    "clean": true,
-    "dts": true,
-    "splitting": false,
-    "format": [
-      "cjs",
-      "esm"
-    ],
-    "external": [
-      "react"
-    ]
+    "commit": "cz"
   },
   "types": "./dist/index.d.ts",
   "exports": {
@@ -64,19 +42,8 @@
       "path": "./node_modules/@ryansonshine/cz-conventional-changelog"
     }
   },
-  "release-it": {
-    "git": {
-      "commitMessage": "chore(release): v${version}"
-    },
-    "github": {
-      "release": true
-    },
-    "npm": {
-      "publish": false
-    }
-  },
   "engines": {
-    "node": ">=14.0.0"
+    "node": ">=16.0.0"
   },
   "devDependencies": {
     "@babel/core": "7.21.4",
@@ -87,14 +54,6 @@
     "@commitlint/config-conventional": "17.6.1",
     "@ryansonshine/commitizen": "4.2.8",
     "@ryansonshine/cz-conventional-changelog": "3.3.4",
-    "@storybook/addon-essentials": "^7.0.5",
-    "@storybook/addon-interactions": "^7.0.5",
-    "@storybook/addon-links": "^7.0.5",
-    "@storybook/blocks": "^7.0.5",
-    "@storybook/react": "^7.0.5",
-    "@storybook/react-webpack5": "^7.0.5",
-    "@storybook/storybook-deployer": "2.8.16",
-    "@storybook/testing-library": "^0.1.0",
     "@types/jest": "29.5.0",
     "@types/node": "18.15.11",
     "@types/react": "18.0.37",
@@ -103,29 +62,25 @@
     "@typescript-eslint/eslint-plugin": "5.59.0",
     "@typescript-eslint/parser": "5.59.0",
     "babel-loader": "9.1.2",
-    "concurrently": "8.0.1",
+    "esbuild-sass-plugin": "^2.8.0",
     "eslint": "8.38.0",
-    "eslint-config-airbnb": "19.0.4",
     "eslint-config-prettier": "8.8.0",
     "eslint-plugin-import": "2.27.5",
     "eslint-plugin-jsx-a11y": "6.7.1",
-    "eslint-plugin-prefer-arrow": "1.2.3",
     "eslint-plugin-prettier": "4.2.1",
     "eslint-plugin-react": "7.32.2",
     "eslint-plugin-react-hooks": "4.6.0",
-    "eslint-plugin-storybook": "0.6.11",
-    "eslint-plugin-typescript-sort-keys": "2.3.0",
-    "eslint-plugin-unused-imports": "2.0.0",
     "husky": "8.0.3",
     "jest": "29.5.0",
     "lint-staged": "13.2.1",
+    "postcss": "^8.4.22",
+    "postcss-modules": "^6.0.0",
+    "postcss-preset-env": "^8.3.2",
     "prettier": "2.8.7",
-    "prop-types": "^15.8.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-test-renderer": "18.2.0",
-    "release-it": "15.10.1",
-    "storybook": "^7.0.5",
+    "sass": "^1.62.0",
     "ts-jest": "29.1.0",
     "tsup": "6.7.0",
     "typescript": "5.0.4",
